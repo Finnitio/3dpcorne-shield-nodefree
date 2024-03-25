@@ -1,0 +1,11 @@
+file_format: "1"
+id: 3dpcorne
+name: 3dpcorne
+type: shield
+url: https://github.com/Finnitio/zmk-config-3dpcorne
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - 3dpcorne_left
+  - 3dpcorne_right

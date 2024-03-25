@@ -17,3 +17,8 @@
 #     artifact-name: corne_left_with_logging
 #
 ---
+include:
+  - board: nice_nano_v2
+    shield: 3dpcorne_left
+  - board: nice_nano_v2
+    shield: 3dpcorne_right

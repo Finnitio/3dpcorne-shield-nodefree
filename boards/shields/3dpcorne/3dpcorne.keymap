@@ -1,0 +1,60 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        Toggle_NAV {
+            bindings = <&tog 3>;
+            key-positions = <40 37>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&kp ESCAPE  &kp Q  &kp W  &kp E           &kp R        &kp T          &kp Y      &kp U  &kp I          &kp O    &kp P         &kp BACKSPACE
+&kp TAB     &kp A  &kp S  &kp D           &kp F        &kp G          &kp H      &kp J  &kp K          &kp L    &kp FSLH      &kp TILDE
+&kp LCTRL   &kp Z  &kp X  &mt LC(C) C     &mt LC(V) V  &mt LG(V) B    &kp N      &kp M  &kp COMMA      &kp DOT  &kp QUESTION  &kp EXCL
+                          &kp LEFT_SHIFT  &mo 1        &kp SPACE      &kp ENTER  &mo 2  &kp BACKSPACE
+            >;
+        };
+
+        Symbols {
+            bindings = <
+&kp CARET  &kp EXCL       &kp DOUBLE_QUOTES  &kp HASH  &kp DLLR  &kp PRCNT    &kp SINGLE_QUOTE  &kp SLASH      &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &none
+&none      &kp AMPERSAND  &trans             &trans    &trans    &trans       &none             &kp TILDE      &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &none
+&none      &trans         &trans             &trans    &trans    &trans       &none             &kp BACKSLASH  &none                  &none            &kp PIPE           &none
+                                             &tog 0    &trans    &trans       &trans            &trans         &tog 0
+            >;
+        };
+
+        NAV_NUM {
+            bindings = <
+&none  &none  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &none      &kp PERIOD  &kp N7         &kp N8  &kp N9  &kp KP_PLUS      &kp KP_DIVIDE
+&none  &none  &kp LEFT_ARROW  &kp DOWN        &kp RIGHT      &none      &kp COMMA   &kp N4         &kp N5  &kp N6  &kp KP_MINUS     &kp KP_EQUAL
+&none  &none  &kp HOME        &none           &kp END        &none      &kp N0      &kp N1         &kp N2  &kp N3  &kp KP_MULTIPLY  &none
+                              &kp LEFT_SHIFT  &mo 1          &kp RET    &kp SPACE   &kp BACKSPACE  &tog 0
+            >;
+        };
+
+        Fkeys_BT {
+            bindings = <
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none     &none   &none   &none   &none    &none    &none
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&bt BT_CLR    &none         &none         &none         &none         &none     &none   &none   &none   &none    &none    &none
+                                          &none         &none         &none     &none   &none   &none
+            >;
+        };
+    };
+};
