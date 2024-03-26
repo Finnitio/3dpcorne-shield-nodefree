@@ -1,9 +1,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#include "../zmk-nodefree-config/helper.h"
-#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
-#include "../zmk-nodefree-config/international_chars/german.dtsi"
+#include "zmk-nodefree-config/helper.h"
+#include "zmk-nodefree-config/keypos_def/keypos_42keys.h"
+#include "zmk-nodefree-config/international_chars/german.dtsi"
 
 /* layer and key shortcuts */
 
