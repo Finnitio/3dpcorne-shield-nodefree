@@ -61,7 +61,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
 
-//#define SMART_NUM &smart_num NAVNUM 0
+#define SMART_NUM &smart_num NAVNUM 0
 
 ZMK_BEHAVIOR(smart_num, hold_tap,
     flavor = "balanced";
@@ -78,17 +78,16 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
 };
 
+// tap: backspace | shift + tap: delete
+ZMK_BEHAVIOR(bs_del, mod_morph,
+    bindings = <&kp BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
 
 // tap: sticky shift | double tap: capsword
 ZMK_BEHAVIOR(ss_cw, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&sk LSHFT>, <&caps_word>;
-)
-
-// tap: backspace | shift + tap: delete | hold: num layer
-ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&lt NAVNUM BSPC>, <&kp DEL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // windows sleep macro
@@ -120,12 +119,16 @@ SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
 
 // combos
 #undef COMBO_TERM
-#define COMBO_TERM 50  // timeout of 40ms (default is 30ms if omitted)
+#define COMBO_TERM 50  // timeout of 50ms (default is 30ms if omitted)
 ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, ALL)  // custom sleep macro, active on all layers
 ZMK_COMBO(combo_copy,         &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,        &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_winpaste,     &kp LGUI(V),  LB0 LB1, ALL)  // Win + V, active on all layers
+ZMK_COMBO(combo_winleft,      &kp LGUI(RIGHT),  LT0 LT1, ALL)  // Win + Right, active on all layers
+ZMK_COMBO(combo_winleft,      &kp LGUI(LEFT),  LT1 LT2, ALL)  // Win + Left, active on all layers
 ZMK_COMBO(combo_LT0,          &to DEF,    LT4 LT5, ALL)  //Always go back to layer 0
+ZMK_COMBO(combo_LT0,          &to GAMING,    RT1 RT2, ALL)  //Always go to Layer FKEYS&BT
+ZMK_COMBO(combo_LT0,          &to FKEYBT,    RT3 RT4, ALL)  //Always go to Layer FKEYS&BT
 
 /* keymap */
 
@@ -137,7 +140,7 @@ ZMK_LAYER(default_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &comma_morph  &dot_morph    &qexcl        xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &ss_cw         &ss_cw       &sl SYM             &bs_del_num   &kp SPACE     &kp RET
+                                                   &kp RET         &ss_cw       &sl SYM             SMART_NUM    &kp SPACE     &bs_del
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
 
