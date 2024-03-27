@@ -71,7 +71,7 @@ ZMK_BEHAVIOR(smart_num, hold_tap,
 )
 ZMK_BEHAVIOR(num_dance, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
+    bindings = <&num_word>, <&sl NAVNUM>;  // reverse this for sticky-num on single tap
 )
 &num_word {  // num-word, requires PR #1451
     layers = <NAVNUM>;
@@ -101,6 +101,23 @@ ZMK_BEHAVIOR(win_sleep, macro,
 // euro sign
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
+    ZMK_BEHAVIOR(NAME, mod_morph, \
+        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
+        bindings = <BINDING1>, <BINDING2>; \
+    )
+
+// tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+
+// tap: dot | shift + tap: colon | ctrl + shift + tap: >
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+
+// tap: qmark | shift + tap: excl
+SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
+
 // combos
 #undef COMBO_TERM
 #define COMBO_TERM 50  // timeout of 40ms (default is 30ms if omitted)
@@ -118,7 +135,7 @@ ZMK_LAYER(default_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &kp TAB       &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G               &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmr LGUI &de_oe &de_ae
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         xxx           &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &kp COMMA     &kp DOT       &kp QUESTION  &kp EXCL
+         xxx           &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &comma_morph  &dot_morph    &qexcl        xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
                                                    &ss_cw         &ss_cw       &sl SYM             &bs_del_num   &kp SPACE     &kp RET
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
