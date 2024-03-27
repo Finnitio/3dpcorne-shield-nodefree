@@ -54,7 +54,7 @@ ZMK_BEHAVIOR(ss_cw, tap_dance,
 
 // tap: backspace | shift + tap: delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&kp BSPC>, <&kp DEL>;
+    bindings = <<&lt NAVNUM BSPC>>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
@@ -71,11 +71,11 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 // combos
 #undef COMBO_TERM
 #define COMBO_TERM 50  // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, ALL)  // custom sleep macro, only active on NAV layer
+ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, ALL)  // custom sleep macro, active on all layers
 ZMK_COMBO(combo_copy,         &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,        &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_winpaste,     &kp LGUI(V),  LB0 LB1, ALL)  // Win + V, active on all layers
-ZMK_COMBO(combo_LT0,          &tog DEF,    LT4 LT5, ALL)  //Always go back to layer 0
+ZMK_COMBO(combo_LT0,          &to DEF,    LT4 LT5, ALL)  //Always go back to layer 0
 
 /* keymap */
 
@@ -86,8 +86,8 @@ ZMK_LAYER(default_layer,
          &kp TAB       &hrm LGUI A   &hrm LALT S   &hrm LCTRL D  &hrm LSHFT F  &kp G               &kp H         &hrm RSHFT J  &hrm LCTRL K  &hrm LALT L   &hrm LGUI &de_oe &de_ae
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &kp COMMA     &kp DOT       &kp QUESTION  &kp EXCL
-     // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-                                                   &ss_cw        &lt SYS SPACE &ss_cw              &kp RET       &kp SPACE     &bs_del_num
+     // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
+                                                   &ss_cw         &ss_cw       &sl SYM SPACE       &bs_del_num   &kp SPACE     &kp RET
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -98,8 +98,8 @@ ZMK_LAYER(sym_layer,
          &kp CARET     &kp AMPERSAND &kp HASH      &kp DOLLAR    &euro_sign    &kp PERCENT       &kp BSLH      &kp LPAR      &kp RBRC      &kp  RBKT     &kp DQT       xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
           xxx          ___            ___          ___           ___           ___                xxx          &kp TILDE     &kp PIPE      xxx           xxx           xxx
-     // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-                                                   &tog DEF      &tog DEF      &tog DEF          &tog DEF      &tog DEF      &tog DEF
+     // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
+                                                   &to DEF      &to DEF      &to DEF          &tog DEF      &tog DEF      &tog DEF
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -110,7 +110,7 @@ ZMK_LAYER(navnum_layer,
           xxx            xxx         &kp LEFT      &kp DOWN      &kp RIGHT     xxx               &kp COMMA     &kp N4        &kp N5        &kp N6        &kp KP_MINUS  &kp KP_EQUAL
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
           xxx            xxx         &kp HOME      xxx           &kp END       xxx               &kp N0        &kp N1        &kp N2        &kp N3        &kp KP_MULTIPLY  xxx
-     // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
+     // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
                                                    &tog 0        &tog 0        &tog 0            &tog 0        &tog 0        &tog 0
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
@@ -122,7 +122,7 @@ ZMK_LAYER(fkeysbt_layer,
          xxx           xxx           xxx           xxx           xxx           xxx                 &kp F11       &kp F4        &kp F5        &kp F6        xxx           xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &bt BT_CLR    xxx           xxx           xxx           xxx           &ext_power EP_OFF   &kp F10       &kp F1        &kp F2        &kp F3        xxx           xxx
-     // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
+     // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
                                                    &tog 0        &tog 0        &tog 0              &tog 0        &tog 0        &tog 0
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
