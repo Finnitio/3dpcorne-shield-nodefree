@@ -133,8 +133,9 @@ ZMK_COMBO(combo_winpaste,     &kp LG(V),  LB0 LB1, ALL)  // Win + V, active on a
 ZMK_COMBO(combo_winright,     &kp LG(RIGHT),  LT0 LT1, ALL)  // Win + Right, active on all layers
 ZMK_COMBO(combo_winleft,      &kp LG(LEFT),  LT1 LT2, ALL)  // Win + Left, active on all layers
 ZMK_COMBO(combo_LT0,          &to DEF,    LT4 LT5, ALL)  //Always go back to layer 0
-ZMK_COMBO(combo_LT0,          &to GAMING,    RT1 RT2, ALL)  //Always go to Layer FKEYS&BT
-ZMK_COMBO(combo_LT0,          &to FKEYBT,    RT3 RT4, ALL)  //Always go to Layer FKEYS&BT
+ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT2 RT3, ALL)  //Always go to Layer FKEYS&BT
+ZMK_COMBO(combo_LT4,          &to GAMING,    RT0 RT1, ALL)  //Always go to Layer FKEYS&BT
+
 
 /* keymap */
 
@@ -152,7 +153,7 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         xxx           xxx           xxx           xxx           xxx           xxx               &kp BSLH     &kp RPAR      &kp RBRC      &kp  LBKT     &kp SQT        xxx
+         xxx           xxx           xxx           xxx           xxx           xxx               &kp BSLH     &kp RPAR      &kp RBRC       &kp  LBKT     &kp SQT       xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &kp CARET     &kp AMPERSAND &kp HASH      &kp DOLLAR    &euro_sign    &kp PERCENT       &kp FSLH      &kp LPAR      &kp LBRC      &kp  RBKT     &kp DQT       xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
@@ -190,7 +191,7 @@ ZMK_LAYER(gaming_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮     ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
          &kp ESC       &kp TAB       &kp Q         &kp W         &kp E         &kp N1              xxx           xxx           xxx           xxx           xxx           xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         xxx           &kp LSHFT     &kp A         &kp S         &kp D         &kp N2              xxx           xxx           xxx           xxx           xxx           xxx
+         &kb b         &kp LSHFT     &kp A         &kp S         &kp D         &kp N2              xxx           xxx           xxx           xxx           xxx           xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           &kp LCTRL     &kp X         &kp C         &kp V         &kp N3              xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
