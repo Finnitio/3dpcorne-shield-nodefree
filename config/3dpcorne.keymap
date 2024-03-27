@@ -54,7 +54,7 @@ ZMK_BEHAVIOR(ss_cw, tap_dance,
 
 // tap: backspace | shift + tap: delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <<&lt NAVNUM BSPC>>, <&kp DEL>;
+    bindings = <&lt NAVNUM BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
