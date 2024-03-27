@@ -132,7 +132,6 @@ ZMK_COMBO(combo_paste,        &kp LC(V),  LB1 LB2, DEF)  // Ctrl + V, active on 
 ZMK_COMBO(combo_winpaste,     &kp LG(V),  LB0 LB1, DEF)  // Win + V, active on all layers
 ZMK_COMBO(combo_winright,     &kp LG(RIGHT),  LT0 LT1, DEF)  // Win + Right, active on all layers
 ZMK_COMBO(combo_winleft,      &kp LG(LEFT),  LT1 LT2, DEF)  // Win + Left, active on all layers
-ZMK_COMBO(combo_LT0,          &to DEF,    LT4 LT5, ALL)  //Always go back to layer 0
 ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT2 RT3, DEF)  //Always go to Layer FKEYS&BT
 ZMK_COMBO(combo_LT4,          &to GAMING,    RT0 RT1, DEF)  //Always go to Layer FKEYS&BT
 
@@ -183,7 +182,7 @@ ZMK_LAYER(fkeysbt_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &bt BT_CLR    xxx           xxx           xxx           xxx           &ext_power EP_OFF   &kp F10       &kp F1        &kp F2        &kp F3        xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   xxx           xxx           xxx                 xxx           xxx           xxx
+                                                   xxx           xxx           xxx                 &to DEF       xxx           xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -195,6 +194,6 @@ ZMK_LAYER(gaming_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           &kp LCTRL     &kp X         &kp C         &kp V         &kp N3              xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &kp LSHFT     &kp LSHFT     &kp SPACE           xxx           xxx           xxx
+                                                   &kp LSHFT     &kp LSHFT     &kp SPACE           &to DEF       xxx           xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
