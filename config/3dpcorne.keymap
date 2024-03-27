@@ -14,8 +14,29 @@
 #define SYM 1
 #define NAVNUM 2
 #define FKEYBT 3
+#define GAMING 4
+#define SOLIDWORKS 5
 
 /* custom behaviors */
+
+/* Global settings */
+
+#define QUICK_TAP_MS 175
+
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.6s
+    quick-release;             // no double capitalization when rolling keys
+};
+
+&sl {  // sticky-layer config
+    ignore-modifiers;          // allow chording sticky mods & layers
+};
+
+&lt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
 
 // homerow mods
 ZMK_BEHAVIOR(hrm, hold_tap,
