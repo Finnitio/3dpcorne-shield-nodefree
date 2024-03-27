@@ -47,9 +47,6 @@ ZMK_BEHAVIOR(win_sleep, macro,
 // euro sign
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 
-// replace a/o/u/s with German umlauts when NAV and NUM are held jointly
-ZMK_CONDITIONAL_LAYER(NAV NUM, GER)
-
 // combos
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
@@ -57,7 +54,7 @@ ZMK_COMBO(combo_sleep,  &win_sleep, RT4 RT5, NAV)  // custom sleep macro, only a
 ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_winpaste, &kp LGUI(V),  LB0 LB1, ALL)  // Win + V, active on all layers
-ZMK_COMBO(combo_LT0,    &tog DEF,    LT4 LT5, ALL)  // 
+ZMK_COMBO(combo_LT0,    &tog DEF,    LT4 LT5, ALL)  //Always go back to layer 0
 
 /* keymap */
 
