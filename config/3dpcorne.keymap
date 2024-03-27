@@ -130,7 +130,7 @@ ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, ALL)  // custom sleep macro, 
 ZMK_COMBO(combo_copy,         &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,        &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_winpaste,     &kp LGUI(V),  LB0 LB1, ALL)  // Win + V, active on all layers
-ZMK_COMBO(combo_winleft,      &kp LGUI(RIGHT),  LT0 LT1, ALL)  // Win + Right, active on all layers
+ZMK_COMBO(combo_winright,     &kp LGUI(RIGHT),  LT0 LT1, ALL)  // Win + Right, active on all layers
 ZMK_COMBO(combo_winleft,      &kp LGUI(LEFT),  LT1 LT2, ALL)  // Win + Left, active on all layers
 ZMK_COMBO(combo_LT0,          &to DEF,    LT4 LT5, ALL)  //Always go back to layer 0
 ZMK_COMBO(combo_LT0,          &to GAMING,    RT1 RT2, ALL)  //Always go to Layer FKEYS&BT
