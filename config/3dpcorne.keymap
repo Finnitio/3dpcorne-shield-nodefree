@@ -59,9 +59,25 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
-//MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
-//MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
-//MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
+// tap: num-word | double-tap: sticky num-layer | hold: num-layer
+
+#define SMART_NUM &smart_num NAVNUM 0
+
+ZMK_BEHAVIOR(smart_num, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&num_dance>;
+)
+ZMK_BEHAVIOR(num_dance, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
+)
+&num_word {  // num-word, requires PR #1451
+    layers = <NAVNUM>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+};
+
 
 // tap: sticky shift | double tap: capsword
 ZMK_BEHAVIOR(ss_cw, tap_dance,
@@ -114,7 +130,7 @@ ZMK_LAYER(sym_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &kp CARET     &kp AMPERSAND &kp HASH      &kp DOLLAR    &euro_sign    &kp PERCENT       &kp BSLH      &kp LPAR      &kp RBRC      &kp  RBKT     &kp DQT       xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          xxx          ___            ___          ___           ___           ___                xxx          &kp TILDE     &kp PIPE      xxx           xxx           xxx
+          xxx          xxx            xxx          xxx           xxx           xxx                xxx          &kp TILDE     &kp PIPE      xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
                                                    &to DEF      &to DEF      &to DEF             &to DEF        &to DEF      &to DEF
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -122,13 +138,13 @@ ZMK_LAYER(sym_layer,
 
 ZMK_LAYER(navnum_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          xxx            xxx         &kp PG_UP     &kp UP        &kp PG_DN     xxx               &kp PERIOD    &kp N7        &kp N8        &kp N9        &kp KP_PLUS   &kp KP_DIVIDE
+          ___            ___         &kp PG_UP     &kp UP        &kp PG_DN     ___               &kp DOT       &kp N7        &kp N8        &kp N9        &kp PLUS      &kp FLSH
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          xxx            xxx         &kp LEFT      &kp DOWN      &kp RIGHT     xxx               &kp COMMA     &kp N4        &kp N5        &kp N6        &kp KP_MINUS  &kp KP_EQUAL
+          ___            ___         &kp LEFT      &kp DOWN      &kp RIGHT     ___               &kp COMMA     &kp N4        &kp N5        &kp N6        &kp MINUS     &kp EQUAL
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          xxx            xxx         &kp HOME      xxx           &kp END       xxx               &kp N0        &kp N1        &kp N2        &kp N3        &kp KP_MULTIPLY  xxx
+          ___            ___         &kp HOME      ___           &kp END       ___               &kp N0        &kp N1        &kp N2        &kp N3        &kp STAR      ___
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &tog 0        &tog 0        &tog 0            &tog 0        &tog 0        &tog 0
+                                                   ___           ___           ___               ___           ___           ___
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
