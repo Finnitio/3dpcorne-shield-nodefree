@@ -146,13 +146,13 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         xxx           xxx           xxx           xxx           xxx           xxx               &kp SLASH     &kp RPAR      &kp LBRC      &kp  LBKT     &kp SQT       xxx
+         xxx           xxx           xxx           xxx           xxx           xxx               &kp BSLH     &kp RPAR      &kp RBRC      &kp  LBKT     &kp SQT       xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         &kp CARET     &kp AMPERSAND &kp HASH      &kp DOLLAR    &euro_sign    &kp PERCENT       &kp BSLH      &kp LPAR      &kp RBRC      &kp  RBKT     &kp DQT       xxx
+         &kp CARET     &kp AMPERSAND &kp HASH      &kp DOLLAR    &euro_sign    &kp PERCENT       &kp FSLH      &kp LPAR      &kp LBRC      &kp  RBKT     &kp DQT       xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          xxx          xxx            xxx          xxx           xxx           xxx               &kp HASH      &kp TILDE     &kp PIPE      xxx           xxx           xxx
+          xxx          xxx            xxx          xxx           xxx           xxx               &kp TILDE     &kp HASH     &kp PIPE      xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &to DEF      &to DEF      &to DEF             &to DEF        &to DEF      &to DEF
+                                                   &to DEF      &to DEF      &to DEF             &to DEF       &to DEF       &to DEF
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
