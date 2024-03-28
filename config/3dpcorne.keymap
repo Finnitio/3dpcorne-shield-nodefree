@@ -75,8 +75,18 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
 )
 &num_word {  // num-word, requires PR #1451
     layers = <NAVNUM>;
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL PG_UP PG_DN UP DOWN LEFT RIGHT HOME END>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL PG_UP PG_DN UP DOWN LEFT RIGHT HOME END RSHFT LALT LCTRL LGUI >;
 };
+
+// tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
+ZMK_BEHAVIOR(smart_shft, mod_morph,
+    bindings = <&sk LSHFT>, <&caps_word>;
+    mods = <(MOD_LSFT)>;
+)
+&caps_word {  // mods deactivate caps-word, requires PR #1451
+    /delete-property/ ignore-modifiers;
+};
+
 
 // Alt+Tab swapper, requires PR #1366
 ZMK_BEHAVIOR(swapper, tri_state,
@@ -90,18 +100,13 @@ ZMK_BEHAVIOR(bs_del, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-// tap: sticky shift | double tap: capsword
-ZMK_BEHAVIOR(ss_cw, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&sk LSHFT>, <&caps_word>;
-)
-
 // windows sleep macro
 ZMK_BEHAVIOR(win_sleep, macro,
     wait-ms = <100>;
     tap-ms = <5>;
     bindings = <&kp LG(X) &kp R &kp E>;
 )
+
 
 // euro sign
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
@@ -126,14 +131,13 @@ SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
 // combos
 #undef COMBO_TERM
 #define COMBO_TERM 50  // timeout of 50ms (default is 30ms if omitted)
-ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, DEF)  // custom sleep macro, active on all layers
-ZMK_COMBO(combo_copy,         &kp LC(C),  LB2 LB3, DEF)  // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste,        &kp LC(V),  LB1 LB2, DEF)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_winpaste,     &kp LG(V),  LB0 LB1, DEF)  // Win + V, active on all layers
-ZMK_COMBO(combo_winctrlright, &kp LC(LG(RIGHT)), LH1, LT0 LT1, DEF)  // Win + CTRL + Right, active on all layers
-ZMK_COMBO(combo_winctrlleft,  &kp LC(LG(LEFT)),  LH1, LT1 LT2, DEF)  // Win + CTRL + Left, active on all layers
-ZMK_COMBO(combo_winright,     &kp LG(RIGHT),  LT0 LT1, DEF)  // Win + Right, active on all layers
-ZMK_COMBO(combo_winleft,      &kp LG(LEFT),  LT1 LT2, DEF)  // Win + Left, active on all layers
+//ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, DEF)  // custom sleep macro, active on all layersBVVVV
+//ZMK_COMBO(combo_paste,        &kp LC(V),  LB1 LB2, DEF)  // Ctrl + V, active on all layers
+//ZMK_COMBO(combo_winpaste,     &kp LG(V),  LB0 LB1, DEF)  // Win + V, active on all layers
+//ZMK_COMBO(combo_winctrlright, &kp LC(LG(RIGHT)), LH1, LT0 LT1, DEF)  // Win + CTRL + Right, active on all layers
+//ZMK_COMBO(combo_winctrlleft,  &kp LC(LG(LEFT)),  LH1, LT1 LT2, DEF)  // Win + CTRL + Left, active on all layers
+//ZMK_COMBO(combo_winright,     &kp LG(RIGHT),  LT0 LT1, DEF)  // Win + Right, active on all layers
+//ZMK_COMBO(combo_winleft,      &kp LG(LEFT),  LT1 LT2, DEF)  // Win + Left, active on all layers
 ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT2 RT3, DEF)  //Always go to Layer FKEYS&BT
 ZMK_COMBO(combo_LT4,          &to GAMING,    RT0 RT1, DEF)  //Always go to Layer FKEYS&BT
 
@@ -143,7 +147,7 @@ ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮     ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
          &kp ESC       &kp Q         &kp W         &kp E         &kp R         &kp T               &kp Z         &kp U         &kp I         &kp O         &kp P         &de_ue
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         &kp TAB       &hml LGUI A   &hml LCTRL S   &hml LALT D   &hml LSHFT F  &kp G               &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmr LGUI &de_oe &de_ae
+         &kp TAB       &hml LGUI A   &hml LCTRL S  &hml LALT D   &hml LSHFT F  &kp G               &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmr LGUI &de_oe &de_ae
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &swapper      &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &comma_morph  &dot_morph    &qexcl        &kp MINUS
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
