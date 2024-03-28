@@ -58,6 +58,7 @@
     )
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
+MAKE_HRM(hmroe, &kp, &de_oe, KEYS_L THUMBS)  // right-hand HRMs
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
 
@@ -147,7 +148,7 @@ ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮     ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
          &kp ESC       &kp Q         &kp W         &kp E         &kp R         &kp T               &kp Z         &kp U         &kp I         &kp O         &kp P         &de_ue
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         &kp TAB       &hml LGUI A   &hml LCTRL S  &hml LALT D   &hml LSHFT F  &kp G               &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmr LGUI &de_oe &de_ae
+         &kp TAB       &hml LGUI A   &hml LCTRL S  &hml LALT D   &hml LSHFT F  &kp G               &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmroe LGUI 0 &de_ae
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &swapper      &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &comma_morph  &dot_morph    &qexcl        &kp MINUS
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
