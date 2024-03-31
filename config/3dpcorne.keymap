@@ -88,11 +88,13 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
     /delete-property/ ignore-modifiers;
 };
 
+#define SYM_HT &sym_ht SYM SYM
+
 ZMK_BEHAVIOR(sym_ht, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo SYM>, <&sl SYM>;
+    bindings = <&mo>, <&sl>;
 )
 
 // Alt+Tab swapper, requires PR #1366
@@ -158,7 +160,7 @@ ZMK_LAYER(default_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &swapper      &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &comma_morph  &dot_morph    &qexcl        &kp MINUS
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &kp RET       &smart_shft   &sl SYM             SMART_NUM     &kp SPACE     &bs_del
+                                                   &kp RET       &smart_shft   SYM_HT              SMART_NUM     &kp SPACE     &bs_del
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
 
