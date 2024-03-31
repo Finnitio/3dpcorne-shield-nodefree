@@ -88,6 +88,12 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
     /delete-property/ ignore-modifiers;
 };
 
+ZMK_BEHAVIOR(sym_ht, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo SYM>, <&sl SYM>;
+)
 
 // Alt+Tab swapper, requires PR #1366
 ZMK_BEHAVIOR(swapper, tri_state,
@@ -148,7 +154,7 @@ ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮     ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
          &kp ESC       &kp Q         &kp W         &kp E         &kp R         &kp T               &kp Z         &kp U         &kp I         &kp O         &kp P         &de_ue
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         &kp TAB       &hml LGUI A   &hml LCTRL S  &hml LALT D   &hml LSHFT F  &kp G               &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LALT L   &hmroe LGUI 0 &de_ae
+         &kp TAB       &hml LGUI A   &hml LCTRL S  &hml LALT D   &hml LSHFT F  &kp G               &kp H         &hmr RSHFT J  &hmr LALT K   &hmr LCTRL L  &hmroe LGUI 0 &de_ae
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &swapper      &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &comma_morph  &dot_morph    &qexcl        &kp MINUS
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
@@ -170,9 +176,9 @@ ZMK_LAYER(sym_layer,
 
 ZMK_LAYER(navnum_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          ___          ___           &kp PG_UP     &kp UP        &kp PG_DN     &kp K_VOLUME_UP   &kp DOT       &kp N7        &kp N8        &kp N9        &kp PLUS      &kp STAR
+          ___          ___           &kp PG_UP     &kp UP        &kp PG_DN     &kp C_VOL_UP      &kp DOT       &kp N7        &kp N8        &kp N9        &kp PLUS      &kp STAR
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          ___          &kp LCTRL     &kp LEFT      &kp DOWN      &kp RIGHT     &kp K_VOLUME_DOWN &kp COMMA     &hmr RSHFT N4 &hmr LALT N5  &hmr LCTRL N6 &hmr LGUI MINUS &kp FSLH
+          ___          &kp LCTRL     &kp LEFT      &kp DOWN      &kp RIGHT     &kp C_VOL_DN      &kp COMMA     &hmr RSHFT N4 &hmr LALT N5  &hmr LCTRL N6 &hmr LGUI MINUS &kp FSLH
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
           ___          ___           &kp HOME      &kp K_APP     &kp END       ___               &kp N0        &kp N1        &kp N2        &kp N3        &kp EQUAL     xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
