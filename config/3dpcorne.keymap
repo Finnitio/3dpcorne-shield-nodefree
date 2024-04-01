@@ -120,7 +120,7 @@ ZMK_BEHAVIOR(win_sleep, macro,
 ZMK_BEHAVIOR(winpaste, macro,
     wait-ms = <100>;
     tap-ms = <5>;
-    bindings = <&macro_press &kp LGUI>, <&macro_tap &kp v>, <&macro_release &kp LGUI>;
+    bindings = <&kp LGUI>;
 )
 
 // euro sign
