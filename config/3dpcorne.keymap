@@ -116,11 +116,9 @@ ZMK_BEHAVIOR(win_sleep, macro,
     bindings = <&kp LG(X) &kp R &kp E>;
 )
 
-// windows sleep macro
+// windows copy
 ZMK_BEHAVIOR(winpaste, macro,
-    wait-ms = <100>;
-    tap-ms = <5>;
-    bindings = <&kp LGUI>;
+    bindings = <&macro_press &kp LGUI>, <&macro_tap &kp V>, <&macro_release &kp LGUI>;
 )
 
 // euro sign
