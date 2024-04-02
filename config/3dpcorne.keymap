@@ -126,7 +126,7 @@ ZMK_BEHAVIOR(winleft, macro,
     bindings = <&macro_press &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>;
 )
 // windows ctrl right
-ZMK_BEHAVIOR(winctrlight, macro,
+ZMK_BEHAVIOR(winctrlright, macro,
     bindings = <&macro_press &kp LGUI>, <&macro_press &kp LCTRL>, <&macro_tap &kp RIGHT>, <&macro_release &kp LGUI>, <&macro_release &kp LCTRL>;
 )
 // windows ctrl
