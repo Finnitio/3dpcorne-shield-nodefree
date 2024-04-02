@@ -130,7 +130,7 @@ ZMK_BEHAVIOR(winctrlight, macro,
 )
 // windows ctrl
 ZMK_BEHAVIOR(winctrlleft, macro,
-    bindings = <&macro_press &kp LGUI>, <&macro_press &kp LCTRL> <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>, <&macro_release &kp LCTRL>;
+    bindings = <&macro_press &kp LGUI>,<&macro_press &kp LCTRL> <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>, <&macro_release &kp LCTRL>;
 )
 // windows paste
 ZMK_BEHAVIOR(winpaste, macro,
@@ -180,7 +180,7 @@ ZMK_LAYER(default_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &swapper      &kp Y         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M         &comma_morph  &dot_morph    &qexcl        &kp MINUS
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &kp RET       &smart_shft   SYM_HT              SMART_NUM     &kp SPACE     &bs_del
+                                                   SYM_HT       &smart_shft    &kp RET              SMART_NUM     &kp SPACE     &bs_del
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
 
