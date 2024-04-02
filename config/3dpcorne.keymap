@@ -162,8 +162,8 @@ SIMPLE_MORPH(qexcl, SFT, &kp DE_QMARK, &kp DE_EXCL)
 ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF)  // Win + V, active on all layers
-ZMK_COMBO(combo_winctrlright, &winctrlright, LT1 LT2, DEF)  // Win + CTRL + Right, active on all layers
-ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  LT2 LT3, DEF)  // Win + CTRL + Left, active on all layers
+ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  LT1 LT2, DEF)  // Win + CTRL + Left, active on all layers
+ZMK_COMBO(combo_winctrlright, &winctrlright, LT2 LT3, DEF)  // Win + CTRL + Right, active on all layers
 ZMK_COMBO(combo_winright,     &winright,  RT1 RT2, DEF)  // Win + Right, active on all layers
 ZMK_COMBO(combo_winleft,      &winleft,  RT2 RT3, DEF)  // Win + Left, active on all layers
 ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF)  //Always go to Layer FKEYS&BT
