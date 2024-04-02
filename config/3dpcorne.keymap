@@ -185,11 +185,11 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp DE_CARET  xxx           xxx           &kp DE_DOLLAR &kp DE_AMPS   &kp DE_HASH       &kp DE_BSLH   &kp DE_RPAR   &kp DE_RBRC   &kp DE_LBKT   &kp DE_SQT    xxx
+         &kp DE_CARET  xxx           xxx           &kp DE_DOLLAR &kp DE_AMPS   &kp DE_HASH       &kp DE_BSLH   &kp DE_RPAR   &kp DE_RBRC   &kp DE_RBKT   &kp DE_SQT    xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          xxx          xxx           &kp DE_SZ     &kp DE_EURO   &kp DE_TILDE  &kp DE_PERCENT    &kp DE_FSLH   &kp DE_LPAR   &kp DE_LBRC   &kp DE_RBKT   &kp DE_DQT    xxx
+          xxx          xxx           &kp DE_SZ     &kp DE_EURO   &kp DE_TILDE  &kp DE_PERCENT    &kp DE_FSLH   &kp DE_LPAR   &kp DE_LBRC   &kp DE_LBKT   &kp DE_DQT    xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          xxx          xxx           xxx           xxx           &kp DE_PIPE                     xxx           xxx           xxx           xxx           xxx           xxx
+          xxx          xxx           xxx           xxx           &kp DE_PIPE   xxx               xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
                                                    xxx           xxx           xxx               xxx           xxx           xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -227,6 +227,6 @@ ZMK_LAYER(gaming_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           &kp LCTRL     &kp DE_X      &kp DE_C      &kp DE_V      &kp DE_N3              xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &kp LSHFT     &kp LSHFT     &kp SPACE              &to DEF       xxx           xxx
+                                                   &kp LCTRL     &kp LSHFT     &kp SPACE              &to DEF       xxx           xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )

@@ -1,0 +1,250 @@
+# FILL IN below field with a value like {qmk_keyboard: ferris/sweep}
+# or {ortho_layout: {split: true, rows: 3, columns: 5, thumbs: 2}}
+# see https://github.com/caksoylar/keymap-drawer/blob/main/KEYMAP_SPEC.md#layout
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x6_3
+layers:
+  default:
+  - ESC
+  -  Q
+  -  W
+  -  E
+  -  R
+  -  T
+  -  Y
+  -  U
+  -  I
+  -  O
+  -  P
+  -  Ü
+  - TAB
+  - {t: A, h: WIN} 
+  - {t: S, h: CTRL}
+  - {t: D, h: ALT}
+  - {t: F, h: SHIFT}
+  -  G
+  -  H
+  - {t: J, h: SHIFT}
+  - {t: K, h: ALT}
+  - {t: L, h: CTRL}
+  - {t: Ö, h: WIN}
+  -  Ü
+  - {t: APP, h: SWITCH}
+  -  Z
+  -  X
+  -  C
+  -  V
+  -  B
+  -  N
+  -  M
+  - {t: ',', s: ';'}
+  - {t: '.', s: ':'}
+  - {t: '?', s: '!'}
+  - {t: '-', s: '_'}
+  - {t: sym, h: sym}
+  - {t: SHIFT, h: sticky, s: Caps Word}
+  - RET
+  - { t: NAVNUM, s: NUM Word}
+  - SPACE
+  - {t: BSPC, s: DEL}
+  sym:
+  -  "^"
+  -  
+  -  
+  -  "$"
+  -  "&"
+  -  "#"
+  -  \
+  -  ")"
+  -  "}"
+  -  "]"
+  -  "'"
+  - 
+  -  
+  -  
+  -  ß
+  -  €
+  -  "~"
+  -  "%"
+  -  /
+  -  (
+  -  "{"
+  -  "["
+  -  '"'
+  -  
+  -  
+  -  
+  -  
+  -  
+  -  "|"
+  -  
+  -  
+  -  
+  -  
+  - 
+  -  
+  -  
+  -  
+  -  
+  -  
+  -  
+  -  
+  -  
+  navnum:
+  - ''
+  - ''
+  - ↑ PG
+  - ↑
+  - PG ↓
+  - ↑ VOL
+  - '.'
+  -  7
+  -  8
+  -  9
+  -  +
+  -  "*"
+  - ''
+  - CTRL
+  - ←
+  - ↓
+  - →
+  - VOL ↓
+  - '.'
+  - {t: 4, h: SHIFT}
+  - {t: 5, h: ALT}
+  - {t: 6, h: CTRL}
+  - {t: -, h: WIN}
+  - /
+  - ''
+  - ''
+  - HOME
+  - CON
+  - END
+  - ''
+  -  0
+  -  1
+  -  2
+  -  3
+  - "="
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  fkeysbt:
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - ''
+  - F12
+  - F7
+  - F8
+  - F9
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F11
+  - F4
+  - F5
+  - F6
+  - ''
+  - ''
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - ''
+  - EP OFF
+  - F10
+  - F1
+  - F2
+  - F3
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: DEF, h: toggle}
+  - ''
+  - ''
+  gaming:
+  - ESC
+  - TAB
+  -  Q
+  -  W
+  -  E
+  -  1
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  -  B
+  - SHIFT
+  -  A
+  -  S
+  -  D
+  -  2
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - CTRL
+  -  X
+  -  C
+  -  V
+  -  3
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - CTRL
+  - SHIFT
+  - SPACE
+  - {t: DEF, h: toggle}
+  - ''
+  - ''
+combos:
+- p: [27, 26]
+  k: COPY
+  l: [default]
+- p: [28, 27]
+  k: PASTE
+  l: [default]
+- p: [29, 28]
+  k: WIN PASTE
+  l: [default]
+- p: [4, 3]
+  k: WINC →
+  l: [default]
+- p: [3, 2]
+  k: WINC ←
+  l: [default]
+- p: [7, 8]
+  k: WIN ←
+  l: [default]
+- p: [8, 9]
+  k: WIN →
+  l: [default]
+- p: [10, 11]
+  k: FKeys BT
+  l: [default]
+- p: [34, 35]
+  k: GAM ING
+  l: [default]
