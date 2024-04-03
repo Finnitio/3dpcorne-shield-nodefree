@@ -77,7 +77,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
 )
 &num_word {  // num-word, requires PR #1451
     layers = <NAVNUM>;
-    continue-list = <BSPC DEL DE_DOT DE_COMMA DE_PLUS DE_MINUS DE_STAR DE_FSLH DE_EQUAL PG_UP PG_DN UP DOWN LEFT RIGHT HOME END K_VOLUME_UP K_VOLUME_DOWN RSHFT LALT LCTRL LGUI >;
+    continue-list = <BSPC DEL DE_DOT DE_COMMA DE_PLUS DE_MINUS DE_STAR DE_FSLH DE_EQUAL PG_UP PG_DN UP DOWN LEFT RIGHT HOME END C_VOLUME_UP C_VOLUME_DOWN RSHFT LALT LCTRL LGUI >;
 };
 
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
