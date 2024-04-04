@@ -159,15 +159,15 @@ SIMPLE_MORPH(qexcl, SFT, &kp DE_QMARK, &kp DE_EXCL)
 #undef COMBO_TERM
 #define COMBO_TERM 75  // timeout of 50ms (default is 30ms if omitted)
 //ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, DEF)  // custom sleep macro, active on all layers
-ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, <DEF NAVNUM>)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, <DEF NAVNUM>)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, <DEF NAVNUM>)  // Win + V, active on all layers
-ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  LT2 LT3, <DEF NAVNUM>)  // Win + CTRL + Left, active on all layers
-ZMK_COMBO(combo_winctrlright, &winctrlright, LT1 LT2, <DEF NAVNUM>)  // Win + CTRL + Right, active on all layers
-ZMK_COMBO(combo_winright,     &winright,  RT1 RT2, <DEF NAVNUM>)  // Win + Right, active on all layers
-ZMK_COMBO(combo_winleft,      &winleft,  RT2 RT3, <DEF NAVNUM>)  // Win + Left, active on all layers
-ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, <DEF NAVNUM>)  //Always go to Layer FKEYS&BT
-ZMK_COMBO(combo_LT4,          &to GAMING,    RB4 RB5, <DEF NAVNUM>)  //Always go to Layer Gaming
+ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM)  // Win + V, active on all layers
+ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  LT2 LT3, DEF SYM NAVNUM)  // Win + CTRL + Left, active on all layers
+ZMK_COMBO(combo_winctrlright, &winctrlright, LT1 LT2, DEF SYM NAVNUM)  // Win + CTRL + Right, active on all layers
+ZMK_COMBO(combo_winright,     &winright,  RT1 RT2, DEF SYM NAVNUM)  // Win + Right, active on all layers
+ZMK_COMBO(combo_winleft,      &winleft,  RT2 RT3, DEF SYM NAVNUM)  // Win + Left, active on all layers
+ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM)  //Always go to Layer FKEYS&BT
+ZMK_COMBO(combo_LT4,          &to GAMING,    RB4 RB5, DEF SYM NAVNUM)  //Always go to Layer Gaming
 
 /* keymap */
 
