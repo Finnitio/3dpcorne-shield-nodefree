@@ -159,15 +159,15 @@ SIMPLE_MORPH(qexcl, SFT, &kp DE_QMARK, &kp DE_EXCL)
 #undef COMBO_TERM
 #define COMBO_TERM 75  // timeout of 50ms (default is 30ms if omitted)
 //ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, DEF)  // custom sleep macro, active on all layers
-ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF)  // Win + V, active on all layers
-ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  LT2 LT3, DEF)  // Win + CTRL + Left, active on all layers
-ZMK_COMBO(combo_winctrlright, &winctrlright, LT1 LT2, DEF)  // Win + CTRL + Right, active on all layers
-ZMK_COMBO(combo_winright,     &winright,  RT1 RT2, DEF)  // Win + Right, active on all layers
-ZMK_COMBO(combo_winleft,      &winleft,  RT2 RT3, DEF)  // Win + Left, active on all layers
-ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF)  //Always go to Layer FKEYS&BT
-ZMK_COMBO(combo_LT4,          &to GAMING,    RB4 RB5, DEF)  //Always go to Layer Gaming
+ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, <DEF, NAVNUM>)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, <DEF, NAVNUM>)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, <DEF, NAVNUM>)  // Win + V, active on all layers
+ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  LT2 LT3, <DEF, NAVNUM>)  // Win + CTRL + Left, active on all layers
+ZMK_COMBO(combo_winctrlright, &winctrlright, LT1 LT2, <DEF, NAVNUM>)  // Win + CTRL + Right, active on all layers
+ZMK_COMBO(combo_winright,     &winright,  RT1 RT2, <DEF, NAVNUM>)  // Win + Right, active on all layers
+ZMK_COMBO(combo_winleft,      &winleft,  RT2 RT3, <DEF, NAVNUM>)  // Win + Left, active on all layers
+ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, <DEF, NAVNUM>)  //Always go to Layer FKEYS&BT
+ZMK_COMBO(combo_LT4,          &to GAMING,    RB4 RB5, <DEF, NAVNUM>)  //Always go to Layer Gaming
 
 /* keymap */
 
@@ -185,11 +185,11 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp DE_CARET  xxx           &kp DE_STAR   &kp DE_DOLLAR &kp DE_AMPS   &kp DE_HASH       &kp DE_BSLH   &kp DE_RPAR   &kp DE_RBRC   &kp DE_RBKT   &kp DE_SQT    xxx
+         &kp DE_CARET  &lp DE_GT     &kp DE_STAR   &kp DE_DOLLAR &kp DE_AMPS   &kp DE_HASH       &kp DE_BSLH   &kp DE_RPAR   &kp DE_RBRC   &kp DE_RBKT   &kp DE_SQT    xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          xxx          xxx           &kp DE_SZ     &kp DE_EURO   &kp DE_TILDE  &kp DE_PERCENT    &kp DE_FSLH   &kp DE_LPAR   &kp DE_LBRC   &kp DE_LBKT   &kp DE_DQT    xxx
+         xxx           &kp DE_LT     &kp DE_SZ     &kp DE_EURO   &kp DE_TILDE  &kp DE_PERCENT    &kp DE_FSLH   &kp DE_LPAR   &kp DE_LBRC   &kp DE_LBKT   &kp DE_DQT    xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-          xxx          xxx           xxx           xxx           &kp DE_PIPE   xxx               xxx           xxx           xxx           xxx           xxx           xxx
+         xxx           xxx           xxx           xxx           &kp DE_PIPE   xxx               xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
                                                    xxx           xxx           xxx               xxx           xxx           xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
