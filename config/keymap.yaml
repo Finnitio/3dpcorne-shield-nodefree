@@ -50,7 +50,7 @@ layers:
   - {t: BSPC, s: DEL}
   sym:
   -  "^"
-  -  
+  -  ">"
   -  "*"
   -  "$"
   -  "&"
@@ -60,9 +60,9 @@ layers:
   -  "}"
   -  "]"
   -  "'"
-  - 
-  -  
-  -  
+  -  "`"
+  -  "@"
+  -  "<"
   -  ß
   -  €
   -  "~"
@@ -72,7 +72,7 @@ layers:
   -  "{"
   -  "["
   -  '"'
-  -  
+  -  "´"
   -  
   -  
   -  
@@ -88,7 +88,7 @@ layers:
   -  {type: held}
   -  
   -  
-  -  
+  -  {t: DEF, h: toggle}
   -  
   -  
   navnum:
@@ -114,7 +114,7 @@ layers:
   - {t: 4, h: SHIFT}
   - {t: 5, h: ALT}
   - {t: 6, h: CTRL}
-  - {t: -, h: WIN}
+  - {t: "-", h: WIN}
   - /
   - ''
   - ''
@@ -131,7 +131,7 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
+  - {type: held, t: DEF, h: toggle}
   - ''
   - ''
   fkeysbt:
@@ -223,28 +223,28 @@ layers:
 combos:
 - p: [27, 26]
   k: COPY
-  l: [default]
+  l: [default, sym, navnum]
 - p: [28, 27]
   k: PASTE
-  l: [default]
+  l: [default, sym, navnum]
 - p: [29, 28]
   k: WIN PASTE
-  l: [default]
+  l: [default, sym, navnum]
 - p: [4, 3]
   k: WINC →
-  l: [default]
+  l: [default, sym, navnum]
 - p: [3, 2]
   k: WINC ←
-  l: [default]
+  l: [default, sym, navnum]
 - p: [7, 8]
   k: WIN ←
-  l: [default]
+  l: [default, sym, navnum]
 - p: [8, 9]
   k: WIN →
-  l: [default]
+  l: [default, sym, navnum]
 - p: [10, 11]
   k: FKeys BT
-  l: [default]
+  l: [default, sym, navnum]
 - p: [34, 35]
   k: GAM ING
-  l: [default]
+  l: [default, sym, navnum]
