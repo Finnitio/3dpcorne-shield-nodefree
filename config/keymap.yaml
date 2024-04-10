@@ -215,8 +215,8 @@ layers:
   - ''
   - ''
   - CTRL
-  - SHIFT
   - SPACE
+  - SHIFT
   - {t: DEF, h: toggle}
   - ''
   - ''
