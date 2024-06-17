@@ -162,10 +162,10 @@ SIMPLE_MORPH(qexcl, SFT, &kp DE_QMARK, &kp DE_EXCL)
 ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM)  // Win + V, active on all layers
-ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  LT2 LT3, DEF SYM NAVNUM)  // Win + CTRL + Left, active on all layers
-ZMK_COMBO(combo_winctrlright, &winctrlright, LT1 LT2, DEF SYM NAVNUM)  // Win + CTRL + Right, active on all layers
-ZMK_COMBO(combo_winright,     &winright,  RT2 RT3, DEF SYM NAVNUM)  // Win + Right, active on all layers
-ZMK_COMBO(combo_winleft,      &winleft,  RT1 RT2, DEF SYM NAVNUM)  // Win + Left, active on all layers
+ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  RT2 RT3, DEF SYM NAVNUM)  // Win + CTRL + Left, active on all layers
+ZMK_COMBO(combo_winctrlright, &winctrlright, RT1 RT2, DEF SYM NAVNUM)  // Win + CTRL + Right, active on all layers
+ZMK_COMBO(combo_winright,     &winright,  LT2 LT3, DEF SYM NAVNUM)  // Win + Right, active on all layers
+ZMK_COMBO(combo_winleft,      &winleft,  LT1 LT2, DEF SYM NAVNUM)  // Win + Left, active on all layers
 ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM)  //Always go to Layer FKEYS&BT
 ZMK_COMBO(combo_LT4,          &to GAMING,    RB4 RB5, DEF SYM NAVNUM)  //Always go to Layer Gaming
 
@@ -175,7 +175,7 @@ ZMK_LAYER(default_layer,
      // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
          &kp ESC          &kp DE_Q         &kp DE_W         &kp DE_E         &kp DE_R         &kp DE_T               &kp DE_Z         &kp DE_U         &kp DE_I         &kp DE_O         &kp DE_P         &kp DE_UE
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
-         &kp TAB          &hml LGUI DE_A   &hml LCTRL DE_S  &hml LALT DE_D   &hml LSHFT DE_F  &kp DE_G               &kp DE_H         &hmr RSHFT DE_J  &hmr LALT DE_K   &hmr LCTRL DE_L  &hmr LGUI DE_OE  &kp DE_AE
+         &kp TAB          &hml LGUI DE_A   &hml LCTRL DE_S  &hml LSHFT DE_D  &hml LALT DE_F   &kp DE_G               &kp DE_H         &hmr LALT DE_J   &hmr LSHFT DE_K  &hmr LCTRL DE_L  &hmr LGUI DE_OE  &kp DE_AE
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
          &swapper         &kp DE_Y         &kp DE_X         &kp DE_C         &kp DE_V         &kp DE_B               &kp DE_N         &kp DE_M         &comma_morph     &dot_morph       &qexcl           &kp DE_MINUS
      // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
@@ -185,9 +185,9 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp DE_CARET  &kp DE_GT     &kp DE_STAR   &kp DE_DOLLAR &kp DE_AMPS   &kp DE_HASH       &kp DE_BSLH   &kp DE_RPAR   &kp DE_RBRC   &kp DE_RBKT   &kp DE_SQT    &kp DE_GRAVE
+         &kp DE_CARET  &kp DE_GT    &kp DE_PERCENT &kp DE_DOLLAR &kp DE_AMPS   &kp DE_HASH       &kp DE_BSLH   &kp DE_RPAR   &kp DE_RBRC   &kp DE_RBKT   &kp DE_SQT    &kp DE_GRAVE
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         &kp DE_AT     &kp DE_LT     &kp DE_SZ     &kp DE_EURO   &kp DE_TILDE  &kp DE_PERCENT    &kp DE_FSLH   &kp DE_LPAR   &kp DE_LBRC   &kp DE_LBKT   &kp DE_DQT    &kp DE_ACUTE
+         &kp DE_AT     &kp DE_LT     &kp DE_SZ     &kp DE_EURO   &kp DE_TILDE  &kp DE_STAR       &kp DE_FSLH   &kp DE_LPAR   &kp DE_LBRC   &kp DE_LBKT   &kp DE_DQT    &kp DE_ACUTE
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           xxx           xxx           xxx           &kp DE_PIPE   &kp DE_DEG        xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
@@ -199,7 +199,7 @@ ZMK_LAYER(navnum_layer,
      // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
           ___             ___              &kp PG_UP        &kp UP           &kp PG_DN        &kp C_VOL_UP           &kp DE_DOT       &kp DE_N7        &kp DE_N8        &kp DE_N9        &kp DE_PLUS      &kp DE_STAR
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
-          ___             &kp LCTRL        &kp LEFT         &kp DOWN         &kp RIGHT        &kp C_VOL_DN           &kp DE_COMMA     &hmr RSHFT DE_N4 &hmr LALT DE_N5  &hmr LCTRL DE_N6 &hmr LGUI DE_MINUS &kp DE_FSLH
+          ___             &kp LCTRL        &kp LEFT         &kp DOWN         &kp RIGHT        &kp C_VOL_DN           &kp DE_COMMA     &hmr LALT DE_N4  &hmr LSHFT DE_N5 &hmr LCTRL DE_N6 &hmr LGUI DE_MINUS &kp DE_FSLH
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
           ___             ___              &kp HOME         &kp K_APP        &kp END          ___                    &kp DE_N0        &kp DE_N1        &kp DE_N2        &kp DE_N3        &kp DE_EQUAL     xxx
      // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
