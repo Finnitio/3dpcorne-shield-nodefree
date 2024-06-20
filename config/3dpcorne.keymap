@@ -63,6 +63,15 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
 
+#define NAVNUM_HT &navnum_ht NANUM NAVNUM
+
+ZMK_BEHAVIOR(navnum_ht, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&sl>;
+)
+
 #define SMART_NUM &smart_num NAVNUM 0
 
 ZMK_BEHAVIOR(smart_num, hold_tap,
@@ -179,7 +188,7 @@ ZMK_LAYER(default_layer,
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
          &swapper         &kp DE_Y         &kp DE_X         &kp DE_C         &kp DE_V         &kp DE_B               &kp DE_N         &kp DE_M         &comma_morph     &dot_morph       &qexcl           &kp DE_MINUS
      // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
-                                                            SYM_HT           &smart_shft      &kp RET                SMART_NUM        &kp SPACE        &bs_del
+                                                            SYM_HT           &smart_shft      &kp RET                NAVNUM_HT        &kp SPACE        &bs_del
      //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
 )
 
