@@ -63,7 +63,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
 
-#define NAVNUM_HT &navnum_ht NANUM NAVNUM
+#define NAVNUM_HT &navnum_ht NAVNUM NAVNUM
 
 ZMK_BEHAVIOR(navnum_ht, hold_tap,
     flavor = "balanced";
