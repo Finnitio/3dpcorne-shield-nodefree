@@ -69,7 +69,12 @@ ZMK_BEHAVIOR(navnum_ht, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&sl>;
+    bindings = <&mo>, <&navnum_dt>;
+)
+
+ZMK_BEHAVIOR(navnum_dt, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&sl NAVNUM>, <&tg NAVNUM>;  // reverse this for sticky-num on single tap
 )
 
 #define SMART_NUM &smart_num NAVNUM 0
@@ -168,7 +173,8 @@ SIMPLE_MORPH(qexcl, SFT, &kp DE_QMARK, &kp DE_EXCL)
 #undef COMBO_TERM
 #define COMBO_TERM 75  // timeout of 50ms (default is 30ms if omitted)
 //ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, DEF)  // custom sleep macro, active on all layers
-ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM)  // Ctrl + X, active on all layers
+ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM)  // Ctrl + C, active on all layers
 ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM)  // Ctrl + V, active on all layers
 ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM)  // Win + V, active on all layers
 ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  RT1 RT2, DEF SYM NAVNUM)  // Win + CTRL + Left, active on all layers
