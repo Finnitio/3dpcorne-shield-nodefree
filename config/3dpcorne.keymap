@@ -74,7 +74,7 @@ ZMK_BEHAVIOR(navnum_ht, hold_tap,
 
 ZMK_BEHAVIOR(navnum_dt, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&sl NAVNUM>, <&tg NAVNUM>;  // reverse this for sticky-num on single tap
+    bindings = <&sl NAVNUM>, <&to NAVNUM>;  // reverse this for sticky-num on single tap
 )
 
 #define SMART_NUM &smart_num NAVNUM 0
