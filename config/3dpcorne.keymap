@@ -74,7 +74,7 @@ ZMK_BEHAVIOR(navnum_ht, hold_tap,
 
 ZMK_BEHAVIOR(navnum_dt, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&sl NAVNUM>, <&to NAVNUM>;  // reverse this for sticky-num on single tap
+    bindings = <&sl NAVNUM>, <&to NAVNUM>;
 )
 
 #define SMART_NUM &smart_num NAVNUM 0
@@ -109,7 +109,12 @@ ZMK_BEHAVIOR(sym_ht, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&sl>;
+    bindings = <&mo>, <&sym_dt>;
+)
+
+ZMK_BEHAVIOR(sym_dt, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&sl SYM>, <&to SYM>;
 )
 
 // Alt+Tab swapper, requires PR #1366
@@ -206,7 +211,7 @@ ZMK_LAYER(sym_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           xxx           xxx           xxx           &kp DE_PIPE   &kp DE_DEG        xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   xxx           xxx           xxx               &to DEF       xxx           xxx
+                                                   xxx           xxx           &to DEF           xxx           xxx           xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
