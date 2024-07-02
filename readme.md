@@ -4,9 +4,13 @@
 
 this is my attempt to create a 3d printed split keyboard. I was intrigued to build an ergo mech split keyboard after seeing a yt video. My main goal was to learn to type with 10 fingers instead of using 3-4 fingers while constantly looking at my keyboard. I have succeeded. I am typing this on the above keyboard.
 
-Reading into ergo mech keyboards i realised that i find the idea of the corne keyboard layout very interesting. I would summarize that you do not skip a key ro reach a key. Due to layers and modifiers it is not necessary to have more keys, i already know where I all find the keys I am looking for. One goal was to keep it as cheap as possible, and having a 3d printer it was cheaper to print it than having pcbs made. That is also the reason I went for gateron switches/hotswaps and nice!nano clones with zmk. And i wanted to have low profile keys to save overall buildheight.
+Reading into ergo mech keyboards i realised that i find the idea of the corne keyboard layout very interesting. I would summarize that you do not skip a key ro reach a key. Due to layers and modifiers it is not necessary to have more keys, i already know where I all find the keys I am looking for. One goal was to keep it as cheap as possible, since i own a 3d printer it was cheaper to print it than having pcbs made. That is also the reason I went for nice!nano clones with zmk. I also wanted to have low profile keys to save overall buildheight. I found cheap gateron switches/hotswaps and the rest is easy to source from ali express. Overall cost for one keyboard is around x €.
 
 After the first version was build i realiesed that i had to lift my wrists slightly to reach the upper row. After some reasearch I decided that something like the dactyl was a bit too much, especially when trying to keep the build height low. So i angled the upper row upwards. I am very happy how it turned out! I basically don't need to move my wrists when typing.
+
+build
+==========================
+
 
 keymap
 ==========================
