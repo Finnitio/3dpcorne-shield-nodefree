@@ -2,7 +2,7 @@
 ==========================
 ![dashboard](3dpcorne.jpg)
 
-this is my attempt to create a 3d printed split keyboard. I was intrigued to build an ergo mech split keyboard after seeing a yt video. My main goal was to learn to type with 10 fingers instead of using 3-4 fingers while constantly looking at my keyboard. I have succeded. I am typing this on the above keyboard.
+this is my attempt to create a 3d printed split keyboard. I was intrigued to build an ergo mech split keyboard after seeing a yt video. My main goal was to learn to type with 10 fingers instead of using 3-4 fingers while constantly looking at my keyboard. I have succeeded. I am typing this on the above keyboard.
 
 Reading into ergo mech keyboards i realised that i find the idea of the corne keybaoard layout very interesting. I would summarize that you do not skip a key, due to layers and modifiers it is not necessary to have more keys, i already know where I find the keys I am looking for. One goal was to keep it as cheap as possible, and having a 3d printer it was cheaper to print it than having pcbs made. That is also the reason I went for gateron switches/hotswaps and nice!nano clones with zmk. And i wanted to have low profile keys to save overall buildheight.
 
