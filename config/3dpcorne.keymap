@@ -185,7 +185,6 @@ ZMK_COMBO(combo_winctrlright, &winctrlright, RT2 RT3, DEF SYM NAVNUM)  // Win + 
 ZMK_COMBO(combo_winright,     &winright,  LT2 LT3, DEF SYM NAVNUM)  // Win + Right, active on all layers
 ZMK_COMBO(combo_winleft,      &winleft,  LT1 LT2, DEF SYM NAVNUM)  // Win + Left, active on all layers
 ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM)  //Always go to Layer FKEYS&BT
-ZMK_COMBO(combo_LT4,          &to GAMING,    RB4 RB5, DEF SYM NAVNUM)  //Always go to Layer Gaming
 
 /* keymap */
 
