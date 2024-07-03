@@ -67,13 +67,13 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 ZMK_BEHAVIOR(navnum_ht, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&navnum_dt>;
 )
 
 ZMK_BEHAVIOR(navnum_dt, tap_dance,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     bindings = <&sl NAVNUM>, <&to NAVNUM>;
 )
 
@@ -107,13 +107,13 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 
 ZMK_BEHAVIOR(sym_ht, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&sym_dt>;
 )
 
 ZMK_BEHAVIOR(sym_dt, tap_dance,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     bindings = <&sl SYM>, <&to SYM>;
 )
 
@@ -211,19 +211,19 @@ ZMK_LAYER(sym_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           xxx           xxx           xxx           &kp DE_PIPE   &kp DE_DEG        xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   xxx           xxx           &to DEF           xxx           xxx           xxx
+                                                   xxx           &smart_shft   &kp RET           &to DEF       &kp SPACE     &bs_del
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
 ZMK_LAYER(navnum_layer,
      // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
-          ___             ___              &kp PG_UP        &kp UP           &kp PG_DN        &kp C_VOL_UP           &kp DE_DOT       &kp DE_N7        &kp DE_N8        &kp DE_N9        &kp DE_PLUS      &kp DE_STAR
+          xxx             xxx              &kp PG_UP        &kp UP           &kp PG_DN        &kp C_VOL_UP           &kp DE_DOT       &kp DE_N7        &kp DE_N8        &kp DE_N9        &kp DE_PLUS      &kp DE_STAR
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
-          ___             &kp LCTRL        &kp LEFT         &kp DOWN         &kp RIGHT        &kp C_VOL_DN           &kp DE_COMMA     &hmr LALT DE_N4  &hmr LSHFT DE_N5 &hmr LCTRL DE_N6 &hmr LGUI DE_MINUS &kp DE_FSLH
+          xxx             &kp LCTRL        &kp LEFT         &kp DOWN         &kp RIGHT        &kp C_VOL_DN           &kp DE_COMMA     &hmr LALT DE_N4  &hmr LSHFT DE_N5 &hmr LCTRL DE_N6 &hmr LGUI DE_MINUS &kp DE_FSLH
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
-          ___             ___              &kp HOME         &kp K_APP        &kp END          ___                    &kp DE_N0        &kp DE_N1        &kp DE_N2        &kp DE_N3        &kp DE_EQUAL     xxx
+          xxx             xxx              &kp HOME         &kp K_APP        &kp END          xxx                    &kp DE_N0        &kp DE_N1        &kp DE_N2        &kp DE_N3        &kp DE_EQUAL     xxx
      // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
-                                                            &mo SYM          ___              ___                    &to DEF          ___              ___
+                                                            &to DEF          xxx              &kp RET                xxx              &kp SPACE        &bs_del
      //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
 )
 
