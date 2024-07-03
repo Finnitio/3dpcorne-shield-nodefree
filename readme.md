@@ -10,7 +10,7 @@ After the first version was build i realised that i had to lift my wrists slight
 
 build
 ==========================
-The build is not too dificult. I have printed the parts in the natural orientation. After removing the support material, i drilled the holes for the hotswaps with a 3 mm bit. Cut the M3 threads with a tap. Depending on the printquality the hotswaps should hava a tight fit. I would suggest to use glue for the hotswaps, since a few came lose when I reattached the switches. Afterwards I soldered rigid wires to the columns and rows. Adding diodes downstream of each switch before connecting the column with rigid wire. To insulate possible contact points i used heat shrink tube. Adding the switch and battery to the micro pro should be saveexplanatory. The connection for the microcontroller is the same for both sides columns and rows are connected to either side of the microcontroller seperately. The order of the colmuns is top to bottom and the rows are ordered from the inside to the outside for each half. The keycaps that i used need to be cut on the underside, I used a knife to cut a chamfers for each keycaps. Parts and links that i used:
+The build is not too difficult. I have printed the parts in the natural orientation. After removing the support material, i drilled the holes for the hotswaps with a 3 mm bit. Cut the M3 threads with a tap. Depending on the printquality the hotswaps should hava a tight fit. I would suggest to use glue for the hotswaps, since a few came lose when I reattached the switches. Afterwards I soldered rigid wires to the columns and rows. Adding diodes downstream of each switch before connecting the column with rigid wire. To insulate possible contact points i used heat shrink tube. Adding the switch and battery to the micro pro should be selfexplanatory. The connection for the microcontroller is the same for both sides columns and rows are connected to either side of the microcontroller seperately. The order of the colmuns is top to bottom and the rows are ordered from the inside to the outside for each half. The keycaps that i used need to be cut on the underside, I used a knife to cut a chamfers for each keycaps. Parts and links that i used:
 
 - [2* NRF52840 Pro Micro](https://www.aliexpress.com/item/1005006035267231.html?spm=a2g0o.order_list.order_list_main.90.39655c5fdYkAzp) 14,68 €
 - [1* Gateron HotSwaps](https://www.aliexpress.com/item/1005006364529726.html?spm=a2g0o.order_list.order_list_main.95.39655c5fdYkAzp) 10,68 €
@@ -19,12 +19,14 @@ The build is not too dificult. I have printed the parts in the natural orientati
 - [3* Keycaps](https://www.aliexpress.com/item/1005005305167568.html?spm=a2g0o.order_list.order_list_main.35.39655c5fdYkAzp) 11,46 €
 - [1* Batteries 200 mAh](https://www.aliexpress.com/item/1005006284939857.html?spm=a2g0o.order_list.order_list_main.84.39655c5fdYkAzp) 2,87 €
 
-that adds up to 41,12 €. Additionally you may add costs for 3d printing, screws, rigid cable, soldering. So you can build one split keyboard for around 50 €.
+that adds up to 41,12 €. Additionally you may add costs for 3d printing, screws, switches, rigid cable, soldering. So you can build one split keyboard for around 50 €.
 
 ![wiring](internals.jpg)
 
 keymap
 ==========================
+
+This is the keymap I am using. The basic layer is for writing with the german qwertz layout. I use urobs homerowmods and some other tweaks from him. The thump keys are for basic writing and entering the additional layers for symbols and navigation+numpad. The layers can be activated by holding the layer key, by taping the layerkey they become sticky and by double tapping you can toggle the layers on until you hit that key again.
 
 ![alt text](https://github.com/Finnitio/3dpcorne-shield-nodefree/blob/main/my_keymap.png?raw=true)
 
@@ -32,3 +34,10 @@ keymap
 
 Thanks
 ==========================
+To the ergo mech keyboard community. Did not know keyboarfs could be that much fun!
+
+[caksoylar](https://github.com/caksoylar) for being very helfpfull setting up the zmk config for this board and for his great tool [keymap-drawer](https://github.com/caksoylar/keymap-drawer) that I used to create the graphics for the keymap.
+[urob](https://github.com/urob) for [node free config](https://github.com/urob/zmk-helpers) and his zmk config which was great to take some ideas from.
+[Joel Spadin](https://github.com/joelspadin) for [zmk locale generator](https://github.com/joelspadin/zmk-locale-generator) which made it possible to use the keyboard with windows locale set to german.
+
+
