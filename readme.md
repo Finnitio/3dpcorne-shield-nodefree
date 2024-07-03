@@ -23,6 +23,8 @@ that adds up to 41,12 €. Additionally you may add costs for 3d printing, screw
 
 ![wiring](internals.jpg)
 
+If somebody would like to create pcb's for this version of the corne keybaord let me know! I would create a case that could mount the pcbs.
+
 keymap
 ==========================
 
@@ -46,4 +48,4 @@ To the ergo mech keyboard community. Did not know keyboards could be that much f
 
 - The [zmk](https://zmk.dev/) Team & Community
 
-- [www.keybr.com](https://www.keybr.com/) for being so great to leant typing with the keyboard.
+- [www.keybr.com](https://www.keybr.com/) for being so great to learn typing with the keyboard.
