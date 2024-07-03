@@ -34,10 +34,16 @@ This is the keymap I am using. The basic layer is for writing with the german qw
 
 Thanks
 ==========================
-To the ergo mech keyboard community. Did not know keyboarfs could be that much fun!
+To the ergo mech keyboard community. Did not know keyboards could be that much fun!
 
-[caksoylar](https://github.com/caksoylar) for being very helfpfull setting up the zmk config for this board and for his great tool [keymap-drawer](https://github.com/caksoylar/keymap-drawer) that I used to create the graphics for the keymap.
-[urob](https://github.com/urob) for [node free config](https://github.com/urob/zmk-helpers) and his zmk config which was great to take some ideas from.
-[Joel Spadin](https://github.com/joelspadin) for [zmk locale generator](https://github.com/joelspadin/zmk-locale-generator) which made it possible to use the keyboard with windows locale set to german.
+- [caksoylar](https://github.com/caksoylar) for being very helfpfull setting up the zmk config for this board and for his great tool [keymap-drawer](https://github.com/caksoylar/keymap-drawer) that I used to create the graphics for the keymap.
 
+- [urob](https://github.com/urob) for [node free config](https://github.com/urob/zmk-helpers) and his zmk config which was great to take some ideas from.
 
+- [Joel Spadin](https://github.com/joelspadin) for [zmk locale generator](https://github.com/joelspadin/zmk-locale-generator) which made it possible to use the keyboard with windows locale set to german.
+
+- [joric](https://github.com/joric) for his great [wiki](https://github.com/joric/nrfmicro/wiki/Alternatives) on the NRF52840 boards.
+
+- The [zmk](https://zmk.dev/) Team & Community
+
+- [www.keybr.com](https://www.keybr.com/) for being so great to leant typing with the keyboard.
