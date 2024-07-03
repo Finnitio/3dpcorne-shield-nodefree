@@ -10,7 +10,9 @@ After the first version was build i realised that i had to lift my wrists slight
 
 build
 ==========================
+The build is not too dificult. I have printed the parts in the natural orientation. After removing the support material, i drilled the holes for the hotswaps with a 3 mm bit. Depending on the printquality the hotswaps should hava a tight fit. I would suggest to use glue for the hotswaps, since a few came lose when I reattached the switches. Afterwards I soldered rigid wires to the columns and rows. adding diods downstream of each row before connecting the rows with rigid wire. To insulate possible contact points i used heat shrink tube.
 
+[wiring](internals.jpg)
 
 keymap
 ==========================
