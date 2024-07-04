@@ -23,7 +23,7 @@ that adds up to 41,12 €. Additionally you may add costs for 3d printing, screw
 
 ![wiring](internals.jpg)
 
-If somebody would like to create pcb's for this version of the corne keybaord let me know! I would create a case that could mount the pcbs.
+If somebody would like to create pcb's for this version of the corne keyboard, let me know! I would create a case that could mount the pcbs.
 
 keymap
 ==========================
