@@ -202,9 +202,9 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-         &kp DE_CARET  &kp DE_GT    &kp DE_PERCENT &kp DE_DOLLAR &kp DE_AMPS   &kp DE_HASH       &kp DE_BSLH   &kp DE_RPAR   &kp DE_RBRC   &kp DE_RBKT   &kp DE_DQT    &kp DE_GRAVE
+         &kp DE_CARET  &kp DE_GT    &kp DE_PERCENT &kp DE_EURO   &kp DE_AMPS   &kp DE_HASH       &kp DE_BSLH   &kp DE_RPAR   &kp DE_RBRC   &kp DE_RBKT   &kp DE_DQT    &kp DE_GRAVE
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         &kp DE_AT     &kp DE_LT     &kp DE_SZ     &kp DE_EURO   &kp DE_TILDE  &kp DE_STAR       &kp DE_FSLH   &kp DE_LPAR   &kp DE_LBRC   &kp DE_LBKT   &kp DE_SQT    &kp DE_ACUTE
+         &kp DE_AT     &kp DE_LT     &kp DE_SZ     &kp DE_DOLLAR &kp DE_TILDE  &kp DE_STAR       &kp DE_FSLH   &kp DE_LPAR   &kp DE_LBRC   &kp DE_LBKT   &kp DE_SQT    &kp DE_ACUTE
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           xxx           xxx           xxx           &kp DE_PIPE   &kp DE_DEG        xxx           xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
