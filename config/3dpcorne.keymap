@@ -80,7 +80,7 @@ ZMK_BEHAVIOR(lht, hold_tap,
 )
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
-#define NAVNUM_HT &navnum_ht NAVNUM NAVNUM
+//#define NAVNUM_HT &navnum_ht NAVNUM NAVNUM
 
 // tap: sticky num-layer | double-tap: toggle num-layer | hold: num-layer
 //ZMK_BEHAVIOR(navnum_ht, hold_tap,
@@ -90,12 +90,12 @@ ZMK_BEHAVIOR(lht, hold_tap,
 //    bindings = <&mo>, <&navnum_dt>;
 //)
 
-//ZMK_BEHAVIOR(navnum_dt, tap_dance,
+//ZMK_BEHAVIOR(navnum_dt, tap_dance
 //    tapping-term-ms = <300>;
 //    bindings = <&sl NAVNUM>, <&to NAVNUM>;
 //)
 
-#define SYM_HT &sym_ht SYM SYM
+//#define SYM_HT &sym_ht SYM SYM
 
 // tap: sticky sym-layer | double-tap: toggle sym-layer | hold: sym-layer
 //ZMK_BEHAVIOR(sym_ht, hold_tap,
@@ -196,7 +196,7 @@ ZMK_LAYER(koy_layer,
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
          &swapper         &kp DE_X         &kp DE_Q         &kp DE_AE        &kp DE_UE        &kp DE_OE              &kp DE_B         &kp DE_P         &kp DE_W         &kp DE_M         &kp DE_J          &qexcl
      // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
-                                                            &lht SYM SYM     &smart_shft      &kp RET                &lht NAVNUM NAVNUM &kp SPACE      &bs_del             
+                                                            ___              ___              ___                    ___              ___              ___             
      //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
 )
 
@@ -232,6 +232,6 @@ ZMK_LAYER(fkeysbt_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &bt BT_CLR    xxx           xxx           xxx           xxx           &ext_power EP_OFF   &kp F10       &kp F1        &kp F2        &kp F3        xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   xxx           xxx           xxx                 &to DEF       &tog KOY      xxx
+                                                   xxx           xxx           xxx                 &to DEF       &to KOY      xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
