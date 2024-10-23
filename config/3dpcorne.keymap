@@ -72,6 +72,13 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
 
+ZMK_BEHAVIOR(lht, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <300>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&sl>;
+)
+
 #define NAVNUM_HT &navnum_ht NAVNUM NAVNUM
 
 ZMK_BEHAVIOR(navnum_ht, hold_tap,
@@ -237,6 +244,6 @@ ZMK_LAYER(koy_layer,
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
          &swapper         &kp DE_X         &kp DE_Q         &kp DE_AE        &kp DE_UE        &kp DE_OE              &kp DE_B         &kp DE_P         &kp DE_W         &kp DE_M         &kp DE_J          &qexcl
      // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
-                                                            SYM_HT           &smart_shft      &kp RET                NAVNUM_HT        &kp SPACE        &bs_del             
+                                                            &lht SYM SYM     &smart_shft      &kp RET                &lht NAVNUM NAVNUM &kp SPACE        &bs_del             
      //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
 )
