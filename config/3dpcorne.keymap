@@ -17,6 +17,7 @@
 #define SYM 1
 #define NAVNUM 2
 #define FKEYBT 3
+#define KOY 4
 
 /* custom behaviors */
 
@@ -56,41 +57,9 @@
         hold-trigger-on-release; \
     )
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
-//MAKE_HRM(hmroe, &kp, &kp DE_OE, KEYS_L THUMBS)  // right-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRM
 
-// tap: num-word | double-tap: sticky num-layer | hold: num-layer
 
-#define NAVNUM_HT &navnum_ht NAVNUM NAVNUM
-
-ZMK_BEHAVIOR(navnum_ht, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <300>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&navnum_dt>;
-)
-
-ZMK_BEHAVIOR(navnum_dt, tap_dance,
-    tapping-term-ms = <300>;
-    bindings = <&sl NAVNUM>, <&to NAVNUM>;
-)
-
-#define SMART_NUM &smart_num NAVNUM 0
-
-ZMK_BEHAVIOR(smart_num, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&num_dance>;
-)
-ZMK_BEHAVIOR(num_dance, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&num_word>, <&sl NAVNUM>;  // reverse this for sticky-num on single tap
-)
-&num_word {  // num-word, requires PR #1451
-    layers = <NAVNUM>;
-    continue-list = <BSPC DEL DE_DOT DE_COMMA DE_PLUS DE_MINUS DE_STAR DE_FSLH DE_EQUAL PG_UP PG_DN UP DOWN LEFT RIGHT HOME END C_VOLUME_UP C_VOLUME_DOWN RSHFT LALT LCTRL LGUI >;
-};
 
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
 ZMK_BEHAVIOR(smart_shft, mod_morph,
@@ -101,19 +70,50 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
     /delete-property/ ignore-modifiers;
 };
 
+// tap: num-word | double-tap: sticky num-layer | hold: num-layer
+
+#define NAVNUM_HT &navnum_ht NAVNUM NAVNUM
+
+ZMK_BEHAVIOR(navnum_ht, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <300>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&sl>;
+)
+
+// tap: sticky num-layer | double-tap: toggle num-layer | hold: num-layer
+//ZMK_BEHAVIOR(navnum_ht, hold_tap,
+//    flavor = "balanced";
+//    tapping-term-ms = <300>;
+//    quick-tap-ms = <QUICK_TAP_MS>;
+//    bindings = <&mo>, <&navnum_dt>;
+//)
+
+//ZMK_BEHAVIOR(navnum_dt, tap_dance,
+//    tapping-term-ms = <300>;
+//    bindings = <&sl NAVNUM>, <&to NAVNUM>;
+//)
+
 #define SYM_HT &sym_ht SYM SYM
 
 ZMK_BEHAVIOR(sym_ht, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <300>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&sym_dt>;
+    bindings = <&mo>, <&sl>;
 )
+// tap: sticky sym-layer | double-tap: toggle sym-layer | hold: sym-layer
+//ZMK_BEHAVIOR(sym_ht, hold_tap,
+//    flavor = "balanced";
+//    tapping-term-ms = <300>;
+//    quick-tap-ms = <QUICK_TAP_MS>;
+//    bindings = <&mo>, <&sym_dt>;
+//)
 
-ZMK_BEHAVIOR(sym_dt, tap_dance,
-    tapping-term-ms = <300>;
-    bindings = <&sl SYM>, <&to SYM>;
-)
+//ZMK_BEHAVIOR(sym_dt, tap_dance,
+//    tapping-term-ms = <300>;
+//    bindings = <&sl SYM>, <&to SYM>;
+//)
 
 // Alt+Tab swapper, requires PR #1366
 ZMK_BEHAVIOR(swapper, tri_state,
@@ -125,13 +125,6 @@ ZMK_BEHAVIOR(swapper, tri_state,
 ZMK_BEHAVIOR(bs_del, mod_morph,
     bindings = <&kp BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
-// windows sleep macro
-ZMK_BEHAVIOR(win_sleep, macro,
-    wait-ms = <100>;
-    tap-ms = <5>;
-    bindings = <&kp LG(DE_X) &kp DE_R &kp DE_E>;
 )
 
 // windows right
@@ -175,16 +168,16 @@ SIMPLE_MORPH(qexcl, SFT, &kp DE_QMARK, &kp DE_EXCL)
 // combos
 #undef COMBO_TERM
 #define COMBO_TERM 75  // timeout of 50ms (default is 30ms if omitted)
-//ZMK_COMBO(combo_sleep,        &win_sleep, RT4 RT5, DEF)  // custom sleep macro, active on all layers
-ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM)  // Ctrl + X, active on all layers
-ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM)  // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM)  // Win + V, active on all layers
-ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  RT1 RT2, DEF SYM NAVNUM)  // Win + CTRL + Left, active on all layers
-ZMK_COMBO(combo_winctrlright, &winctrlright, RT2 RT3, DEF SYM NAVNUM)  // Win + CTRL + Right, active on all layers
-ZMK_COMBO(combo_winright,     &winright,  LT2 LT3, DEF SYM NAVNUM)  // Win + Right, active on all layers
-ZMK_COMBO(combo_winleft,      &winleft,  LT1 LT2, DEF SYM NAVNUM)  // Win + Left, active on all layers
-ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM)  //Always go to Layer FKEYS&BT
+
+ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM KYO)  // Ctrl + X, active on all layers
+ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM KYO)  // Ctrl + C, active on all layers
+ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM KYO)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM KYO)  // Win + V, active on all layers
+ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  RT1 RT2, DEF SYM NAVNUM KYO)  // Win + CTRL + Left, active on all layers
+ZMK_COMBO(combo_winctrlright, &winctrlright, RT2 RT3, DEF SYM NAVNUM KYO)  // Win + CTRL + Right, active on all layers
+ZMK_COMBO(combo_winright,     &winright,  LT2 LT3, DEF SYM NAVNUM KYO)  // Win + Right, active on all layers
+ZMK_COMBO(combo_winleft,      &winleft,  LT1 LT2, DEF SYM NAVNUM KYO)  // Win + Left, active on all layers
+ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM KYO)  //Always go to Layer FKEYS&BT
 
 /* keymap */
 
@@ -208,19 +201,19 @@ ZMK_LAYER(sym_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           xxx           xxx           xxx           &kp DE_PIPE   &kp DE_HASH       &kp DE_TILDE  xxx           xxx           xxx           xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &to DEF       &smart_shft   &kp RET           xxx           &kp SPACE     &bs_del
+                                                   xxx           &smart_shft   &kp RET           xxx           &kp SPACE     &bs_del
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
 ZMK_LAYER(navnum_layer,
      // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
-          xxx             xxx              &kp PG_UP        &kp UP           &kp PG_DN        &kp C_VOL_UP           xxx              &kp DE_N7        &kp DE_N8        &kp DE_N9        &kp DE_PLUS      &kp DE_STAR
+          xxx             xxx              &kp PG_UP        &kp UP           &kp PG_DN        xxx                    xxx              &kp DE_N7        &kp DE_N8        &kp DE_N9        &kp DE_PLUS      &kp DE_STAR
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
-          xxx             &kp LCTRL        &kp LEFT         &kp DOWN         &kp RIGHT        &kp C_VOL_DN           &kp DE_DOT       &hmr LALT DE_N4  &hmr LSHFT DE_N5 &hmr LCTRL DE_N6 &hmr LGUI DE_MINUS &kp DE_FSLH
+          xxx             &kp HOME         &kp LEFT         &kp DOWN         &kp RIGHT        &kp END                &kp DE_DOT       &hmr LALT DE_N4  &hmr LSHFT DE_N5 &hmr LCTRL DE_N6 &hmr LGUI DE_MINUS &kp DE_FSLH
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
-          xxx             xxx              &kp HOME         &kp K_APP        &kp END          xxx                    &kp DE_COMMA     &kp DE_N1        &kp DE_N2        &kp DE_N3        &kp DE_EQUAL     xxx
+          xxx             xxx              xxx              xxx              xxx              xxx                    &kp DE_COMMA     &kp DE_N1        &kp DE_N2        &kp DE_N3        &kp DE_EQUAL     xxx
      // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
-                                                            xxx              xxx              &kp RET                &to DEF          &kp SPACE        &kp DE_N0
+                                                            xxx              &smart_shft      &kp RET                xxx              &kp SPACE        &kp DE_N0
      //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
 )
 
@@ -232,6 +225,18 @@ ZMK_LAYER(fkeysbt_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &bt BT_CLR    xxx           xxx           xxx           xxx           &ext_power EP_OFF   &kp F10       &kp F1        &kp F2        &kp F3        xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   xxx           xxx           xxx                 &to DEF       xxx           xxx
+                                                   xxx           xxx           xxx                 &to DEF       &to KOY       xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
+)
+
+ZMK_LAYER(kyo_layer,
+     // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
+         &kp ESC          &kp DE_K         &dot_morph       &kp O            &comma_morph     &kp DE_Y               &kp DE_V         &kp DE_G         &kp DE_C         &kp DE_L         &kp DE_SZ         &kp DE_Z
+     // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
+         &kp TAB          &hml LGUI DE_H   &hml LCTRL DE_A  &hml LSHFT DE_E  &hml LALT DE_I   &kp DE_U               &kp DE_D         &hmr LALT DE_T   &hmr LSHFT DE_R  &hmr LCTRL DE_N  &hmr LGUI DE_S    &kp F
+     // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
+         &swapper         &kp DE_X         &kp DE_Q         &kp DE_AE        &kp DE_UE        &kp DE_OE              &kp DE_B         &kp DE_P         &kp DE_W         &kp DE_M         &kp DE_J          &qexcl
+     // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
+                                                            SYM_HT           &smart_shft      &kp RET                NAVNUM_HT        &kp SPACE        &bs_del             
+     //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
 )
