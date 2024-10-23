@@ -169,15 +169,15 @@ SIMPLE_MORPH(qexcl, SFT, &kp DE_QMARK, &kp DE_EXCL)
 #undef COMBO_TERM
 #define COMBO_TERM 75  // timeout of 50ms (default is 30ms if omitted)
 
-ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM KYO)  // Ctrl + X, active on all layers
-ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM KYO)  // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM KYO)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM KYO)  // Win + V, active on all layers
-ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  RT1 RT2, DEF SYM NAVNUM KYO)  // Win + CTRL + Left, active on all layers
-ZMK_COMBO(combo_winctrlright, &winctrlright, RT2 RT3, DEF SYM NAVNUM KYO)  // Win + CTRL + Right, active on all layers
-ZMK_COMBO(combo_winright,     &winright,  LT2 LT3, DEF SYM NAVNUM KYO)  // Win + Right, active on all layers
-ZMK_COMBO(combo_winleft,      &winleft,  LT1 LT2, DEF SYM NAVNUM KYO)  // Win + Left, active on all layers
-ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM KYO)  //Always go to Layer FKEYS&BT
+ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM KOY)  // Ctrl + X, active on all layers
+ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM KOY)  // Ctrl + C, active on all layers
+ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM KOY)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM KOY)  // Win + V, active on all layers
+ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  RT1 RT2, DEF SYM NAVNUM KOY)  // Win + CTRL + Left, active on all layers
+ZMK_COMBO(combo_winctrlright, &winctrlright, RT2 RT3, DEF SYM NAVNUM KOY)  // Win + CTRL + Right, active on all layers
+ZMK_COMBO(combo_winright,     &winright,  LT2 LT3, DEF SYM NAVNUM KOY)  // Win + Right, active on all layers
+ZMK_COMBO(combo_winleft,      &winleft,  LT1 LT2, DEF SYM NAVNUM KOY)  // Win + Left, active on all layers
+ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM KOY)  //Always go to Layer FKEYS&BT
 
 /* keymap */
 
@@ -229,7 +229,7 @@ ZMK_LAYER(fkeysbt_layer,
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_LAYER(kyo_layer,
+ZMK_LAYER(koy_layer,
      // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
          &kp ESC          &kp DE_K         &dot_morph       &kp O            &comma_morph     &kp DE_Y               &kp DE_V         &kp DE_G         &kp DE_C         &kp DE_L         &kp DE_SZ         &kp DE_Z
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
