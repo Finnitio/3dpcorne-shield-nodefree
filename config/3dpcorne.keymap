@@ -17,9 +17,8 @@
 #define SYM 1
 #define NAVNUM 2
 #define FKEYBT 3
-#define NOTED 4
-#define KOY 5
-#define XOY 6
+#define CMOS 4
+
 
 
 
@@ -129,15 +128,15 @@ ZMK_BEHAVIOR(winpaste, macro,
 #undef COMBO_TERM
 #define COMBO_TERM 75  // timeout of 75ms (default is 30ms if omitted)
 
-ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM NOTED KOY XOY)  // Ctrl + X, active on all layers
-ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM NOTED KOY XOY)  // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM NOTED KOY XOY)  // Ctrl + V, active on all layers
-ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM NOTED KOY XOY)  // Win + V, active on all layers
-ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  RT1 RT2, DEF SYM NAVNUM NOTED KOY XOY)  // Win + CTRL + Left, active on all layers
-ZMK_COMBO(combo_winctrlright, &winctrlright, RT2 RT3, DEF SYM NAVNUM NOTED KOY XOY)  // Win + CTRL + Right, active on all layers
-ZMK_COMBO(combo_winright,     &winright,  LT2 LT3, DEF SYM NAVNUM NOTED KOY XOY)  // Win + Right, active on all layers
-ZMK_COMBO(combo_winleft,      &winleft,  LT1 LT2, DEF SYM NAVNUM NOTED KOY XOY)  // Win + Left, active on all layers
-ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM NOTED KOY XOY)  //Always go to Layer FKEYS&BT
+ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM CMOS)  // Ctrl + X, active on all layers
+ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM CMOS)  // Ctrl + C, active on all layers
+ZMK_COMBO(combo_paste,        &kp LC(DE_V),  LB1 LB2, DEF SYM NAVNUM CMOS)  // Ctrl + V, active on all layers
+ZMK_COMBO(combo_winpaste,     &winpaste,  LB0 LB1, DEF SYM NAVNUM CMOS)  // Win + V, active on all layers
+ZMK_COMBO(combo_winctrlleft,  &winctrlleft,  RT1 RT2, DEF SYM NAVNUM CMOS)  // Win + CTRL + Left, active on all layers
+ZMK_COMBO(combo_winctrlright, &winctrlright, RT2 RT3, DEF SYM NAVNUM CMOS)  // Win + CTRL + Right, active on all layers
+ZMK_COMBO(combo_winright,     &winright,  LT2 LT3, DEF SYM NAVNUM CMOS)  // Win + Right, active on all layers
+ZMK_COMBO(combo_winleft,      &winleft,  LT1 LT2, DEF SYM NAVNUM CMOS)  // Win + Left, active on all layers
+ZMK_COMBO(combo_LT3,          &to FKEYBT,    RT4 RT5, DEF SYM NAVNUM CMOS)  //Always go to Layer FKEYS&BT
 
 /* keymap */
 
@@ -185,10 +184,22 @@ ZMK_LAYER(fkeysbt_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          &bt BT_CLR    xxx           xxx           xxx           xxx           &ext_power EP_OFF   &kp F10       &kp F1        &kp F2        &kp F3        xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
-                                                   &to DEF       &to NOTED     &to KOY             &to XOY       xxx           xxx
+                                                   xxx           xxx           xxx                 &to DEF       &to CMOS      xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
 )
 
+ZMK_LAYER(cmos_layer,
+     // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
+         &kp ESC          &kp DE_J         &kp DE_K         &kp DE_U         &kp DE_O         &kp DE_AE              &kp DE_P         &kp DE_B         &kp DE_L         &kp DE_M         &kp DE_SZ        &kp DE_X
+     // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
+         &kp TAB          &hml LGUI DE_W   &hml LCTRL DE_H  &hml LSHFT DE_I  &hml LALT DE_E   &kp DE_A               &kp DE_D         &hmr LALT DE_T   &hmr LSHFT DE_N  &hmr LCTRL DE_R  &hmr LGUI DE_S   &kp DE_Q
+     // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
+         &kp DE_MINUS     &kp DE_Y         &dot_morph       &kp DE_UE        &comma_morph     &kp DE_OE              &kp DE_G         &kp DE_C         &kp DE_V         &kp DE_Z         &kp DE_F         &qexcl
+     // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
+                                                            ___              ___              ___                    ___              ___              ___             
+     //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
+)
+/*
 ZMK_LAYER(noted_layer,
      // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
          &kp ESC          &kp DE_Z         &kp DE_Y         &kp DE_U         &kp DE_A         &kp DE_Q               &kp DE_P         &kp DE_B         &kp DE_M         &kp DE_L         &kp DE_F         &kp DE_J
@@ -224,3 +235,4 @@ ZMK_LAYER(xoy_layer,
                                                             ___              ___              ___                    ___              ___              ___             
      //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
 )
+*/
