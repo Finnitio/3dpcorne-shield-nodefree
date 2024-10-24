@@ -86,7 +86,7 @@ ZMK_BEHAVIOR(lht, hold_tap,
     ZMK_BEHAVIOR(NAME, mod_morph, \
         mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
         bindings = <BINDING1>, <BINDING2>; \
-    
+    )
 
 // tap: backspace | shift + tap: delete
 ZMK_BEHAVIOR(bs_del, mod_morph,
@@ -191,7 +191,7 @@ ZMK_LAYER(fkeysbt_layer,
 
 ZMK_LAYER(noted_layer,
      // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮     ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
-         &kp ESC          &kp DE_Z         &kp DE_Y         &kp U            &kp DE_A         &kp DE_Q               &kp DE_P         &kp DE_B         &kp DE_M         &kp DE_L         &kp DE_F         &kp DE_J
+         &kp ESC          &kp DE_Z         &kp DE_Y         &kp DE_U         &kp DE_A         &kp DE_Q               &kp DE_P         &kp DE_B         &kp DE_M         &kp DE_L         &kp DE_F         &kp DE_J
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
          &kp TAB          &hml LGUI DE_C   &hml LCTRL DE_S  &hml LSHFT DE_I  &hml LALT DE_E   &kp DE_O               &kp DE_D         &hmr LALT DE_T   &hmr LSHFT DE_N  &hmr LCTRL DE_R  &hmr LGUI DE_H   &kp DE_SZ
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
