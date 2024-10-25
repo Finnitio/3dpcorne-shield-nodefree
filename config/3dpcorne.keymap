@@ -13,7 +13,7 @@
 #define ___ &trans
 #define xxx &none
 
-#define DEF 0  // layer shortcuts, must match order in which they are defined below
+#define DEF 0// layer shortcuts, must match order in which they are defined below
 #define CMOS 1
 #define SYM 2
 #define NAVNUM 3
@@ -158,7 +158,7 @@ ZMK_LAYER(cmos_layer,
      // ├────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────┤
          &kp DE_MINUS     &kp DE_Y         &dot_morph       &kp DE_UE        &comma_morph     &kp DE_OE              &kp DE_G         &kp DE_C         &kp DE_V         &kp DE_Z         &kp DE_F         &qexcl
      // ╰────────────────┬────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤     ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┬────────────────╯
-                                                            ___              ___              ___                    ___              ___              ___             
+                                                            &lht SYM SYM     &smart_shft      &kp RET                &lht NAVNUM NAVNUM &kp SPACE      &bs_del
      //                                                    ╰────────────────┴────────────────┴────────────────╯     ╰────────────────┴────────────────┴────────────────╯
 )
 
