@@ -67,7 +67,7 @@ ZMK_BEHAVIOR(ht, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <300>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&sk>, <&kp>;
+    bindings = <&kp>, <&sk>;
 )
 
 // tap: sticky layer | hold: change layer
