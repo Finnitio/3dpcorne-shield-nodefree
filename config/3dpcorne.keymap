@@ -50,7 +50,7 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_BEHAVIOR(NAME, hold_tap, \
         flavor = "balanced"; \
-        tapping-term-ms = <280>; \
+        tapping-term-ms = <200>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
         require-prior-idle-ms = <150>; \
         bindings = <HOLD>, <TAP>; \
@@ -65,7 +65,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRM
 // tap: sticky key| hold: keypress
 ZMK_BEHAVIOR(ht, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <300>;
+    tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&kp>, <&sk>;
 )
@@ -73,7 +73,7 @@ ZMK_BEHAVIOR(ht, hold_tap,
 // tap: sticky layer | hold: change layer
 ZMK_BEHAVIOR(lht, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <300>;
+    tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&sl>;
 )
@@ -122,8 +122,8 @@ ZMK_BEHAVIOR(winpaste, macro,
 )
 
 // combos
-#undef COMBO_TERM
-#define COMBO_TERM 75  // timeout of 75ms (default is 30ms if omitted)
+//#undef COMBO_TERM
+//#define COMBO_TERM 75  // timeout of 75ms (default is 30ms if omitted)
 
 ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM CMOS)  // Ctrl + X, active on all layers
 ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM CMOS)  // Ctrl + C, active on all layers
