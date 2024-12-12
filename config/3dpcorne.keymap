@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/keys.h>
 
 #include "keys_de.h"
@@ -191,7 +192,7 @@ ZMK_LAYER(fkeysbt_layer,
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
          xxx           xxx           xxx           xxx           xxx           xxx                 &kp F11       &kp F4        &kp F5        &kp F6        xxx           xxx
      // ├─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────┤
-         &bt BT_CLR    xxx           xxx           xxx           xxx           &ext_power EP_OFF   &kp F10       &kp F1        &kp F2        &kp F3        xxx           xxx
+         &bt BT_CLR    xxx           xxx           xxx           &out OUT_BLE  &ext_power EP_OFF   &kp F10       &kp F1        &kp F2        &kp F3        xxx           xxx
      // ╰─────────────┬─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤     ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┬─────────────╯
                                                    xxx           xxx           xxx                 &to DEF       &to CMOS      xxx
      //                                           ╰─────────────┴─────────────┴─────────────╯     ╰─────────────┴─────────────┴─────────────╯
