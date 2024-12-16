@@ -123,8 +123,8 @@ ZMK_BEHAVIOR(winpaste, macro,
 )
 
 // combos
-//#undef COMBO_TERM
-//#define COMBO_TERM 75  // timeout of 75ms (default is 30ms if omitted)
+#undef COMBO_TERM
+#define COMBO_TERM 75  // timeout of 75ms (default is 30ms if omitted)
 
 ZMK_COMBO(combo_cut,         &kp LC(DE_X),  LB3 LB4, DEF SYM NAVNUM CMOS)  // Ctrl + X, active on all layers
 ZMK_COMBO(combo_copy,         &kp LC(DE_C),  LB2 LB3, DEF SYM NAVNUM CMOS)  // Ctrl + C, active on all layers
